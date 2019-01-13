@@ -34,7 +34,7 @@ public class LicenseClient {
 
     private void connect() {
         try {
-            socket = (SSLSocket) SSLSocketFactory.getDefault().createSocket(ip, port);
+            socket = (SSLSocket) SSLSocketFactory.getDefault().createSocket(InetAddress.getByName(ip), port);
             socket.setEnabledCipherSuites(socket.getSupportedCipherSuites());
             socket.startHandshake();
             System.out.println("Connected to Server");
